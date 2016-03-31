@@ -1,11 +1,13 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
+{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE GADTs #-}
 
 module Main where
 
 import           Diagrams.Prelude
 import           Diagrams.Backend.NanoVG.CmdLine
 
-stops = mkStops [(orange, 0, 1), (white, 0.5, 1), (blue, 1, 1)]
+stops = mkStops [(orange, 0, 1), (blue, 1, 1)]
 g     = defaultRG & _RG . rGradStops .~ stops
 
 stops' = mkStops [(lightskyblue, 0, 1), (darkgreen, 1, 0.5)]

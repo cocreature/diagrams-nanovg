@@ -1,4 +1,6 @@
 > {-# LANGUAGE NoMonomorphismRestriction #-}
+> {-# LANGUAGE FlexibleContexts #-}
+> {-# LANGUAGE GADTs #-}
 > import           Control.Monad                 (replicateM)
 > import           Control.Monad.Random
 > import           Data.Colour.Palette.ColorSet

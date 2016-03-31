@@ -7,6 +7,8 @@
 -}
 
 {-# LANGUAGE NoMonomorphismRestriction #-}
+{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE GADTs #-}
 import Diagrams.Prelude
 import Diagrams.Backend.NanoVG.CmdLine
 

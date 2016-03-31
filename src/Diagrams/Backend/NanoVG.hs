@@ -478,8 +478,10 @@ instance Renderable (Text Double) NanoVG where
                      w' | w' >= 0.75 -> S.singleton BC.AlignRight
                      _ -> S.singleton BC.AlignCenter
     save
+    -- TODO load correct font
     liftIO $ BC.textAlign cxt  (hAlign <> vAlign)
-    liftIO $ BC.fontFace cxt fnt
+    Just fntId <- liftIO $ BC.createFont cxt "arial" (BC.FileName "/usr/share/fonts/TTF/ariblk.ttf")
+    liftIO $ BC.fontFaceId cxt fntId
     fillTexture tx (realToFrac o)
     canvasTransform (tr <> reflectionY)
     liftIO $ BC.text cxt 0 0 (T.pack str)
