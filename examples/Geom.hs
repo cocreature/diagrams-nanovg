@@ -26,10 +26,11 @@ top   = (1 ^& 0) ~~ (chordX ^& chordY)
 bot   = reflectY top
 hd    = fc lightgray . lw none . translateX 1 . strokeTrail . glueTrail
       . mconcat $ [top, back', bot]
-chord = lc green . stroke $ (chordX ^& chordY) ~~ (chordX ^& 0)
+chord :: Diagram B
+chord = lc green . stroke $ ((chordX ^& chordY) ~~ (chordX ^& 0) :: Path V2 Double)
 
 drawLine :: V2 Double -> Diagram B
-drawLine = stroke . fromOffsets . (:[])
+drawLine v = stroke (fromOffsets (v:[]) :: Path V2 Double)
 
 r1       = dashingN [0.01, 0.01] 0 . lw veryThin . drawLine $ (1 ^& 0)
 r_1      = lc green . reflectX . drawLine $ (1 ^& 0)
