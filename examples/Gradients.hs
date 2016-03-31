@@ -16,9 +16,7 @@ h'     = mkLinearGradient stops' ((-50) ^& 0) (50 ^& 0) GradPad
 
 linear = mkLinearGradient (mkStops [(black,0,1), (white,1,1)]) (0 ^& (-300)) (0 ^& 300) GradPad
 radial = mkRadialGradient (mkStops [(orange,   0.0, 0.4)
-                                  , (orange, 0.05,   1)
-                                  , (gray,   0.35, 0.25)
-                                  , (teal,   0.50, 1)])
+                                  , (teal,   1, 1)])
                           (0 ^& 0) 50
                           (0 ^& 0) 80 GradRepeat
 
