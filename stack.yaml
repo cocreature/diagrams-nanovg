@@ -1,7 +1,9 @@
 resolver: nightly-2016-03-28
 packages:
 - '.'
-- location: '../nanovg'
+- location:
+    git: git@github.com:cocreature/nanovg-hs.git
+    commit: 5558aef3381b2e95b38c8e3d0d66f0842f4ed668
   extra-dep: true
 extra-deps: []
 flags: {}
