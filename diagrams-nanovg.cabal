@@ -1,0 +1,45 @@
+Name:                diagrams-nanovg
+Version:             1.3.0.3
+Synopsis:            tbd
+Description:         This package provides a modular backend for rendering
+                     diagrams created with the diagrams EDSL using nanovg.
+Homepage:            http://projects.haskell.org/diagrams/
+License:             BSD3
+License-file:        LICENSE
+Author:              Moritz Kiefer
+Maintainer:          moritz.kiefer@purelyfunctional.org
+Bug-reports:         http://github.com/cocreature/diagrams-nanovg/issues
+Stability:           Experimental
+Category:            Graphics
+Build-type:          Simple
+Extra-source-files:  README.md, CHANGELOG.md
+Tested-with:         GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.2
+Cabal-version:       >=1.10
+Source-repository head
+  type:     git
+  location: https://github.com/cocreature/diagrams-nanovg.git
+
+Library
+  Exposed-modules:     Diagrams.Backend.NanoVG
+                       Diagrams.Backend.NanoVG.CmdLine
+  Hs-source-dirs:      src
+  Build-depends:       GLFW-b,
+                       NumInstances >= 1.0 && < 1.5,
+                       base >= 4.6 && < 4.9,
+                       cmdargs >= 0.6 && < 0.11,
+                       containers >= 0.3 && < 0.6,
+                       data-default-class >= 0.0.1 && < 0.1,
+                       diagrams-core >= 1.3 && < 1.4,
+                       diagrams-lib >= 1.3 && < 1.4,
+                       gl,
+                       lens >= 4.0 && < 4.14,
+                       monad-loops,
+                       mtl >= 2.0 && < 3.0,
+                       nanovg,
+                       optparse-applicative >= 0.10 && < 0.13,
+                       statestack >= 0.2 && <0.3,
+                       text >= 1.0 && < 1.3
+
+  Default-language:    Haskell2010
+  c-sources:           cbits/glew.c
+  extra-libraries:     GLEW
